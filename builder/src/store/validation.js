@@ -4,7 +4,7 @@ export default {
         validations: []
     },
     mutations: {
-        setValidationByFieldId(state, {fieldId, validationRules}) {
+        setValidationByFieldId(state, { fieldId, validationRules }) {
             let searchedItem = state.validations.filter(item => item.fieldId === fieldId)[0]
             if (searchedItem) {
                 searchedItem = {
@@ -23,21 +23,23 @@ export default {
         },
         removeValidationByFieldId(state, fieldId) {
             state.validations.forEach((item, index) => {
-                if (item.fieldId === fieldId) {
+                if (item.fieldId === fieldId
+                    && typeof state.styles === 'object'
+                    && typeof state.styles[index] !== 'undefined') {
                     state.styles.splice(index, 1)
                 }
             })
         }
     },
     actions: {
-        setValidationByFieldId({commit}, {fieldId, validationRules}) {
-            commit('setValidationByFieldId', {fieldId, validationRules})
+        setValidationByFieldId({ commit }, { fieldId, validationRules }) {
+            commit('setValidationByFieldId', { fieldId, validationRules })
             commit('setFieldsData')
         },
-        setValidations({commit}, validations) {
+        setValidations({ commit }, validations) {
             commit('setValidations', validations)
         },
-        removeValidationByFieldId({commit}, fieldId) {
+        removeValidationByFieldId({ commit }, fieldId) {
             commit('removeValidationByFieldId', fieldId)
         }
     },
