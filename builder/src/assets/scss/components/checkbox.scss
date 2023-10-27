@@ -10,10 +10,10 @@
   margin-right: offset(1);
   cursor: pointer;
 
-  &:before {
-    width: 10px !important;
-    height: 10px !important;
-  }
+  // &:before {
+  //   width: 10px !important;
+  //   height: 10px !important;
+  // }
 
   //responsive small fix
   @media (max-width: 782px) {
