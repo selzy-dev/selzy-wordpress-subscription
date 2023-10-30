@@ -123,9 +123,11 @@ export default {
     types() {
       return this.$store.getters.types;
     },
-    typesWithoutNameAndEmail() {
-      return this.types.filter((item) => item.id !== 1 && item.id !== 2);
-    },
+     typesWithoutNameAndEmail() {
+            // old logic without name and email
+            // return this.types.filter(item => item.id !== 1 && item.id !== 2)
+            return this.types;
+        },
     isPhoneSet() {
       return this.items.some((item) => item.type === 3);
     },
