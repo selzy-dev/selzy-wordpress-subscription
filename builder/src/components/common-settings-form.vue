@@ -109,6 +109,13 @@
             :type="'textarea'"
             @updateValue="updatePolicy"
           ></Field>
+              <p style="padding-top: 5px;">
+                In order to insert a link, you need to follow the rules. In round brackets 
+                (text for the link)[https://www.example.com] link in square brackets.
+                You don't need to use brackets for plain text.
+                Copy this and edit only text and link
+                <b> (text)[link] </b> 
+             </p>
         </v-col>
         <v-col cols="12" md="6">
           <v-row>

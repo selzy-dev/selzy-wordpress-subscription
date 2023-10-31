@@ -137,7 +137,13 @@ $doubleOptin = $form['commonSettings']['settingsSend']['doubleOptin'];
                 <label class="b-selzy-field__label">
                     <input type="checkbox" class="b-selzy-form__policy-input required">
                     <span class="checkmark"></span>
-                    <?= $formPolicy ?>
+                    <?php             
+                        $pattern = "/\(([^)]+)\)\[([^]]+)\]/";
+                        $replacement = '<a href="$2">$1</a>';
+                        $result = preg_replace($pattern, $replacement, $formPolicy);
+                        
+                        echo $result;
+                    ?>
                 </label>
                 <div style="display: none;" class="policy-error b-selzy-form__error-text" data-selzy-field-error>
                 <?= $messages['required_error_text'] ?>
