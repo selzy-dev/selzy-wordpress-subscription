@@ -128,17 +128,17 @@ export default {
             commit('updateAccordions', list)
             commit('setFieldsData')
         },
-        initAccordions() {
-            // commit('initAccordions')
-            // commit('setStyleById', {
-            //     fieldId: 1,
-            //     styles: {}
-            // })
-            // commit('setStyleById', {
-            //     fieldId: 2,
-            //     styles: {}
-            // })
-            // commit('setFieldsData')
+        initAccordions({commit}) {
+            commit('initAccordions')
+            commit('setStyleById', {
+                fieldId: 1,
+                styles: {}
+            })
+            commit('setStyleById', {
+                fieldId: 2,
+                styles: {}
+            })
+            commit('setFieldsData')
         }
     },
     getters: {

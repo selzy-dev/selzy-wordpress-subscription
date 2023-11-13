@@ -15,10 +15,10 @@
                         <div class="b-field-actions__item" @click="toggleAccordion">
                             {{ $t('field.edit') }}
                         </div>
-                        <div class="b-field-actions__item" @click="duplicateAccordion">
+                         <div class="b-field-actions__item" v-if="data.id !== 2" @click="duplicateAccordion">
                             {{ $t('field.duplicate') }}
                         </div>
-                        <div class="b-field-actions__item">
+                           <div class="b-field-actions__item" v-if="data.id !== 2">
                             <span @click="confirm = true">{{ $t('field.delete') }}</span>
                             <div class="b-confirm" :class="confirm ? 'active' : ''">
                                 <div class="b-confirm__item">{{ $t('field.confirmDelete') }}</div>
