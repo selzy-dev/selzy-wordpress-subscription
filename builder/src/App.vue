@@ -37,7 +37,7 @@ export default {
   },
   created() {
     // eslint-disable-next-line no-undef
-    if (typeof SELZY_ADDITIONAL_FIELDS !== "undefined") {
+    if (typeof SELZY_ADDITIONAL_FIELDS !== "undefined" && SELZY_ADDITIONAL_FIELDS !== "null") {
       // eslint-disable-next-line no-undef
       this.selzyAdditionalFields = SELZY_ADDITIONAL_FIELDS;
       this.$store.dispatch("setAdditionalFields", this.selzyAdditionalFields);
