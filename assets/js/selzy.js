@@ -79,7 +79,9 @@ class SelzyForm {
         const policyInput = this.form.querySelector('.b-selzy-form__policy-input')
         const policyError = this.form.querySelector('.policy-error')
 
-        policyError.style.display = 'none';
+        if (policyError) {
+            policyError.style.display = 'none';
+        }
 
         for (let i = 0; i < this.fields.length; i++) {
             const value = this.fields[i].getAttribute('type') === 'checkbox' ? this.fields[i].checked : this.fields[i].value
@@ -111,8 +113,10 @@ class SelzyForm {
             this.form.classList.add('_show-message')
             this.form.classList.add('_validation-error-text')
 
-            policyError.style.display = 'block';
-            policyError.style.color = '#df1b1b';
+            if (policyError) {
+                policyError.style.display = 'block';
+                policyError.style.color = '#df1b1b';
+            }
             // вывести ошибку
 
         } else if (this.errors.length === 0) {
