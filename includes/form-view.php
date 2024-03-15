@@ -120,14 +120,16 @@ $doubleOptin = $form['commonSettings']['settingsSend']['doubleOptin'];
     </div>
 
     <div class="b-selzy-form__main">
-        <?php foreach ($form['fields'] as $index => $field) : ?>
-            <?php if ($field['field']['title']) :?>
-                <?= Selzy\ViewWrapper\View::render(SelzyFormFieldTypes::getView($field['field']['type']), [
-                    'data' => $field,
-                    'index' => $index
-                ]) ?>
-            <?php endif;?>
-        <?php endforeach; ?>
+        <?php if ($form['fields']): ?>
+            <?php foreach ($form['fields'] as $index => $field) : ?>
+                <?php if ($field['field']['title']) :?>
+                    <?= Selzy\ViewWrapper\View::render(SelzyFormFieldTypes::getView($field['field']['type']), [
+                        'data' => $field,
+                        'index' => $index
+                    ]) ?>
+                <?php endif;?>
+            <?php endforeach; ?>
+        <?php endif;?>
     </div>
 
     <div class="b-selzy-form__footer"> 
